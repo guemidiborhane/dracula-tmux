@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# title      Tokyo Night                                              +
+# title      Dracula                                                  +
 # version    1.0.0                                                    +
-# repository https://github.com/logico-dev/tokyo-night-tmux           +
-# author     Lógico                                                   +
-# email      hi@logico.com.ar                                         +
+# repository https://github.com/guemidiborhane/dracula-tmux           +
+# author     Borhaneddine GUEMIDI                                     +
+# email      guemidiborhane@gmail.com                                 +
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -24,19 +24,18 @@ tmux set -g message-command-style "fg=${THEME[white]},bg=${THEME[black]}"
 
 tmux set -g pane-border-style "fg=${THEME[bblack]}"
 tmux set -g pane-active-border-style "fg=${THEME[blue]}"
-tmux set -g pane-border-status off
 
 tmux set -g status-style bg="${THEME[background]}"
 
 TMUX_VARS="$(tmux show -g)"
 
-default_window_id_style="digital"
-default_pane_id_style="hsquare"
-default_zoom_id_style="dsquare"
+default_window_id_style="hsquare"
+default_pane_id_style="dsquare"
+default_zoom_id_style="fsquare"
 
-window_id_style="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_window_id_style' | cut -d" " -f2)"
-pane_id_style="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_pane_id_style' | cut -d" " -f2)"
-zoom_id_style="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_zoom_id_style' | cut -d" " -f2)"
+window_id_style="$(echo "$TMUX_VARS" | grep '@dracula-tmux_window_id_style' | cut -d" " -f2)"
+pane_id_style="$(echo "$TMUX_VARS" | grep '@dracula-tmux_pane_id_style' | cut -d" " -f2)"
+zoom_id_style="$(echo "$TMUX_VARS" | grep '@dracula-tmux_zoom_id_style' | cut -d" " -f2)"
 window_id_style="${window_id_style:-$default_window_id_style}"
 pane_id_style="${pane_id_style:-$default_pane_id_style}"
 zoom_id_style="${zoom_id_style:-$default_zoom_id_style}"
